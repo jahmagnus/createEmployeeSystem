@@ -41,7 +41,7 @@ public class Employee {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getPayNumber() {
+    private int getPayNumber() {
         this.payNumber = random.nextInt(9999) + 999;
         return payNumber;
 
