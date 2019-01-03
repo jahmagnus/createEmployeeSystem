@@ -9,7 +9,7 @@ public class EmployeeSystem {
     private Scanner sc = new Scanner(System.in);
     private List<Accountant> accountantList;
     private List<Employee> employeeList;
-
+    private Employee employee;
 
     public EmployeeSystem() {
         this.accountantList = new ArrayList<Accountant>();
@@ -40,6 +40,18 @@ public class EmployeeSystem {
             }
         }
         return false;
+    }
+
+    public Employee searchRecords(String forename, String surname, List<Accountant> array) {
+        for (Accountant checkedEmployee: array){
+            if (checkedEmployee.getForename().equals(forename) && checkedEmployee.getSurname().equals(surname)){
+                System.out.println(checkedEmployee.toString());
+                return checkedEmployee;
+            }
+        }
+        System.out.println("No record of this employee found");
+        return null;
+
     }
 
 
