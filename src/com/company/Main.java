@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -73,7 +74,7 @@ public class Main {
         }
 
         public static void printAccountantList(){
-        employeeSystem.printList();
+        employeeSystem.printList(employeeSystem.getAccountantList());
         }
 
 

@@ -17,6 +17,10 @@ public class EmployeeSystem {
 
     }
 
+    public List<Accountant> getAccountantList() {
+        return accountantList;
+    }
+
     public boolean createNewAccountant(String forename, String surname, String birthDate, String qualification, boolean chartered){
         if (!findAccountant(forename, surname)){
             accountantList.add(new Accountant(forename, surname, birthDate, qualification, chartered));
@@ -39,9 +43,9 @@ public class EmployeeSystem {
     }
 
 
-    public void printList(){
-        for (int i = 0; i < accountantList.size(); i++){
-            System.out.println(accountantList.get(i));
+    public void printList(List array){
+        for (int i = 0; i < array.size(); i++){
+            System.out.println(array.get(i));
         }
     }
 

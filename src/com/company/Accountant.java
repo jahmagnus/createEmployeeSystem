@@ -29,13 +29,15 @@ public class Accountant extends Employee{
 
     @Override
     public String toString() {
-        System.out.println("===================================\n" +
+      return "===================================\n" +
                 "Forename: " + getForename() + "\n" +
                 "Surname: " + getSurname() + "\n" +
                 "Date of birth: " + getDateOfBirth() + "\n" +
                 "Qualification: " + getQualification() + "\n" +
                 "Pay number: " + getPayNumber() + "\n" +
-                "=========================================");
-        return toString();
+                "=========================================";
+
     }
+
+
 }
