@@ -1,14 +1,21 @@
 package com.company;
 
-public class Accountant extends Employee{
+public class Accountant extends Employee implements IProfessionalEmployee{
 
     private String qualification;
     private boolean chartered;
+    private int salary;
 
     public Accountant(String forename, String surname, String dateOfBirth, String qualification, boolean chartered) {
         super(forename, surname, dateOfBirth);
         this.qualification = qualification;
         this.chartered = chartered;
+        this.salary = getSalary();
+    }
+
+    @Override
+    public int getSalary() {
+        return 37400;
     }
 
     public String getQualification() {
