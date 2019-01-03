@@ -70,11 +70,22 @@ public class Main {
                 case 1:
                     printAccountantList();
                     break;
+                case 2:
+                    searchForAccountant();
+                    break;
             }
         }
 
         public static void printAccountantList(){
         employeeSystem.printList(employeeSystem.getAccountantList());
+        }
+
+        public static void searchForAccountant(){
+            System.out.println("Please enter the forename of employee");
+            String forename = sc.nextLine();
+            System.out.println("Please enter surname of employee");
+            String surname = sc.nextLine();
+        employeeSystem.searchRecords(forename, surname, employeeSystem.getAccountantList());
         }
 
 
