@@ -42,7 +42,8 @@ public class Accountant extends Employee implements IProfessionalEmployee{
                 "Date of birth: " + getDateOfBirth() + "\n" +
                 "Qualification: " + getQualification() + "\n" +
                 "Pay number: " + getPayNumber() + "\n" +
-                "=========================================";
+                "salary: " + getSalary() + "\n" +
+                "===================================";
 
     }
 

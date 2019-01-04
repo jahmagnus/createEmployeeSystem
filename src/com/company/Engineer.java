@@ -15,7 +15,7 @@ public class Engineer extends Employee implements IProfessionalEmployee{
 
     @Override
     public int getSalary() {
-        return 37400;
+        return 39200;
     }
 
     @Override
@@ -26,7 +26,8 @@ public class Engineer extends Employee implements IProfessionalEmployee{
                 "Date of birth: " + getDateOfBirth() + "\n" +
                 "Engineer type: " + getEngineerType() + "\n" +
                 "Pay number: " + getPayNumber() + "\n" +
-                "=========================================";
+                "Salary: " + getSalary() + "\n" +
+                "=====================================";
     }
 
     public boolean isChartered() {
@@ -36,4 +37,6 @@ public class Engineer extends Employee implements IProfessionalEmployee{
     public String getEngineerType() {
         return engineerType;
     }
+
+
 }

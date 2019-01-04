@@ -10,6 +10,7 @@ public class Employee {
     private String dateOfBirth;
     private int payNumber;
 
+
     public Employee(String forename, String surname, String dateOfBirth) {
         this.forename = forename;
         this.surname = surname;
