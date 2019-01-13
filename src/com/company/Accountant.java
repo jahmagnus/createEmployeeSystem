@@ -1,6 +1,6 @@
 package com.company;
 
-public class Accountant extends Employee implements IProfessionalEmployee{
+public class Accountant extends Employee implements IProfessionalEmployee, Comparable{
 
     private String qualification;
     private boolean chartered;
@@ -33,6 +33,8 @@ public class Accountant extends Employee implements IProfessionalEmployee{
     public void setChartered(boolean chartered) {
         this.chartered = chartered;
     }
+
+
 
     @Override
     public String toString() {

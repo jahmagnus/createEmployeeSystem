@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Random;
 
-public class Employee {
+public class Employee implements Comparable {
     Random random = new Random();
 
     private String forename;
@@ -53,9 +53,8 @@ public class Employee {
     }
 
 
-
-
-
-
-
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }

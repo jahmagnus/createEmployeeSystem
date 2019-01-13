@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -59,6 +60,24 @@ public class EmployeeSystem {
         return null;
     }
 
+    public int findAccountantInt(String forename, String surname){
+        for (Accountant accountant: accountantList){
+            if (accountant.getForename().equals(forename) && accountant.getSurname().equals(surname)){
+                return accountantList.indexOf(accountant);
+            }
+        }
+        return -1;
+    }
+
+    public boolean deleteAccountant(String forename, String surname, String birthDate, String qualification, boolean chartered){
+        if (findAccountantInt(forename, surname)>= 0){
+            int accountantPosition = findAccountantInt(forename, surname);
+            accountantList.remove(accountantPosition);
+            return true;
+        }
+        return false;
+    }
+
 
     //Methods for the creation of a new Engineer and finding existing engineer ============================================
     public boolean createNewEngineer(String forename, String surname, String birthDate, boolean chartered, String engineerType){
@@ -95,10 +114,12 @@ public class EmployeeSystem {
 
     // print full employee grade list==================================
 
-    public void printList(List array){
-        for (int i = 0; i < array.size(); i++){
+    public void printList(List array) {
+        for (int i = 0; i < array.size(); i++) {
             System.out.println(array.get(i));
         }
     }
 
 }
+
+

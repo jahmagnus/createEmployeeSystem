@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -88,9 +89,9 @@ public class Main {
             }
         }
 
-        public static void printAccountantList(){
-        employeeSystem.printList(employeeSystem.getAccountantList());
-        }
+        public static void printAccountantList() {
+
+    }
 
         public static void searchForAccountant(){
             System.out.println("Please enter the forename of employee");
@@ -147,6 +148,7 @@ public class Main {
         }
 
     public static void printEngineerList(){
+
         employeeSystem.printList(employeeSystem.getEngineerList());
     }
 
