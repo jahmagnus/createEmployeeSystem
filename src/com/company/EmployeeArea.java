@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class EmployeeArea<T extends Employee> {
 
@@ -27,10 +28,24 @@ public class EmployeeArea<T extends Employee> {
         }
     }
 
+    public Employee findEmployee(String forename, String surname, ArrayList<T> arrayList){
+        for (Employee employee: arrayList){
+        if (employee.getForename().equals(forename) && employee.getSurname().equals(surname)){
+            System.out.println(employee);
+            return employee;
+        }
+        }
+        System.out.println("Employee not found");
+        return null;
+    }
+
     public void printEmployeeList(ArrayList<T> arrayList){
         for (int i = 0; i < arrayList.size(); i++){
             System.out.println(arrayList.get(i));
         }
     }
+
+
+
 
 }

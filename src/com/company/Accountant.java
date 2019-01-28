@@ -1,6 +1,6 @@
 package com.company;
 
-public class Accountant extends Employee implements IProfessionalEmployee, Comparable{
+public class Accountant extends Employee implements IProfessionalEmployee{
 
     private String qualification;
     private boolean chartered;

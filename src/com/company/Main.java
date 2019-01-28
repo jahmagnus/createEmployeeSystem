@@ -8,6 +8,9 @@ import java.util.Scanner;
 public class Main {
     private static EmployeeArea<Accountant> accountants = new EmployeeArea<>("Accountants");
     private static ArrayList<Accountant> accountantArrayList = new ArrayList<>();
+    private static EmployeeArea<Engineer> engineers = new EmployeeArea<>("Engineers");
+    private static ArrayList<Engineer> engineerArrayList = new ArrayList<>();
+
     private static Scanner sc = new Scanner(System.in);
     private static EmployeeSystem employeeSystem = new EmployeeSystem();
     public static void main(String[] args) {
@@ -81,7 +84,7 @@ public class Main {
                     printAccountantList();
                     break;
                 case 2:
-                    searchForAccountant();
+                    findAccountant();
                     break;
                 case 3:
                     printEngineerList();
@@ -94,19 +97,52 @@ public class Main {
 
         public static void printAccountantList() {
             accountants.printEmployeeList(accountantArrayList);
-    }
-
-        public static void searchForAccountant(){
-            System.out.println("Please enter the forename of employee");
-            String forename = sc.nextLine();
-            System.out.println("Please enter surname of employee");
-            String surname = sc.nextLine();
-        employeeSystem.findAccountant(forename, surname, employeeSystem.getAccountantList());
         }
 
-        public static void addNewAccountant() {
+        public static void findAccountant(){
+            System.out.println("Please enter forename of Accountant");
+            String forename = sc.nextLine();
+            System.out.println("Please enter surname of Accountant");
+            String surname = sc.nextLine();
+            accountants.findEmployee(forename, surname, accountantArrayList);
+        }
+
+        public static void printEngineerList(){
+        engineers.printEmployeeList(engineerArrayList);
+        }
+
+        public static void searchForEngineer(){
+            System.out.println("Please enter forename of Engineer");
+            String forename = sc.nextLine();
+            System.out.println("Please enter surname of Engineer");
+            String surname = sc.nextLine();
+            engineers.findEmployee(forename, surname, engineerArrayList);
+        }
+
+    public static void addNewEngineer(){
+        boolean chartered;
+        System.out.println("Please enter forename");
+        String forename = sc.nextLine();
+        System.out.println("Please enter surname");
+        String surname = sc.nextLine();
+        System.out.println("Please enter date of birth");
+        String dob = sc.nextLine();
+        System.out.println("Is this accountant chartered Y/N?");
+        String charterAnswer = sc.nextLine();
+        if (charterAnswer.equals("y")) {
+            chartered = true;
+        } else {
+            chartered = false;
+        }
+        System.out.println("Please enter Engineer type");
+        String engineerType = sc.nextLine();
+
+        engineers.addNewEmployee(new Engineer(forename, surname, dob, chartered, engineerType), engineerArrayList);
+
+    }
 
 
+    public static void addNewAccountant() {
             boolean chartered;
             System.out.println("Please enter forename");
             String forename = sc.nextLine();
@@ -126,67 +162,12 @@ public class Main {
 
             accountants.addNewEmployee(new Accountant(forename, surname, dob, qualification, chartered), accountantArrayList);
 
+    }
 
-//        public static void addNewAccountant(){
-//            boolean chartered;
-//            System.out.println("Please enter forename");
-//            String forename = sc.nextLine();
-//            System.out.println("Please enter surname");
-//            String surname = sc.nextLine();
-//            System.out.println("Please enter date of birth");
-//            String dob = sc.nextLine();
-//            System.out.println("Please enter qualification type");
-//            String qualification = sc.nextLine();
-//            System.out.println("Is this accountant chartered Y/N?");
-//            String charterAnswer = sc.nextLine();
-//            if (charterAnswer.equals("y")){
-//                chartered = true;
-//            } else {
-//                chartered = false;
-//            }
-//            employeeSystem.createNewAccountant(forename, surname, dob, qualification, chartered);
-//
-//        }
-
+        public static void addNewCleaner() {
         }
 
-        public static void addNewCleaner(){
 
-    }
-
-        public static void addNewEngineer(){
-            boolean chartered;
-            System.out.println("Please enter forename");
-            String forename = sc.nextLine();
-            System.out.println("Please enter surname");
-            String surname = sc.nextLine();
-            System.out.println("Please enter date of birth");
-            String dob = sc.nextLine();
-            System.out.println("Is this accountant chartered Y/N?");
-            String charterAnswer = sc.nextLine();
-            System.out.println("Please enter type of Engineer");
-            String engineerType = sc.nextLine();
-
-            if (charterAnswer.equals("y")){
-                chartered = true;
-            } else {
-                chartered = false;
-            }
-            employeeSystem.createNewEngineer(forename, surname, dob, chartered, engineerType);
-        }
-
-    public static void printEngineerList(){
-
-        employeeSystem.printList(employeeSystem.getEngineerList());
-    }
-
-    public static void searchForEngineer(){
-        System.out.println("Please enter the forename of employee");
-        String forename = sc.nextLine();
-        System.out.println("Please enter surname of employee");
-        String surname = sc.nextLine();
-        employeeSystem.findEngineer(forename, surname, employeeSystem.getEngineerList());
-    }
 
     }
 

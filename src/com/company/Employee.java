@@ -2,8 +2,8 @@ package com.company;
 
 import java.util.Random;
 
-public abstract class Employee implements Comparable {
-    Random random = new Random();
+public abstract class Employee<T extends Employee> {
+    private Random random = new Random();
 
     private String forename;
     private String surname;
@@ -53,8 +53,5 @@ public abstract class Employee implements Comparable {
     }
 
 
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
+
 }
