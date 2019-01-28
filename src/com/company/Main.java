@@ -72,6 +72,9 @@ public class Main {
                     "3 - Engineer List\n" +
                     "4 - Find Engineer record\n" +
                     "-------------------------------------\n" +
+                    "5 - Remove accountant record\n" +
+                    "4 - Remove Engineer record\n" +
+                    "-------------------------------------\n" +
                     "=============================================================");
 
             int choice = sc.nextInt();
@@ -91,6 +94,9 @@ public class Main {
                     break;
                 case 4:
                     searchForEngineer();
+                    break;
+                case 5:
+                    removeAccountant();
                     break;
             }
         }
@@ -164,9 +170,20 @@ public class Main {
 
     }
 
-        public static void addNewCleaner() {
+        public static void removeAccountant(){
+            System.out.println("Please enter forename");
+            String forename = sc.nextLine();
+            System.out.println("Please enter surname");
+            String surname = sc.nextLine();
+            accountants.removeEmployee(forename, surname, accountantArrayList);
         }
 
+
+
+
+        public static void addNewCleaner(){
+
+        }
 
 
     }
